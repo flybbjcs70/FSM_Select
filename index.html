@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="css.css" rel="stylesheet" />
+    <script src="select-plugin.js"></script>
+    <style type="text/css">
+        .container {
+            background:#aaa;
+            padding:20px;
+        }
+        .select {
+            position: relative;
+            display: inline-block;
+            width: 300px;
+        }
+
+        .select-options {
+            position: absolute;
+            width: 100%;margin-top: -1px;
+            
+        }
+            .select-options ul {
+                padding:5px;
+                background:#fff;border:1px solid #efefef;
+                line-height:1.6;
+                cursor:pointer;
+            }
+                .select-options ul li {
+                    padding:3px;
+                }
+                .select-options ul li:hover {
+                    background:#efefef;
+                }
+        .selected {
+            height: 2em;
+            line-height:  2em;
+            border: 1px solid #efefef;
+            background:#fff;
+            padding:4px 10px;
+            cursor:pointer;
+        }
+        .arrow {
+            position:absolute;
+            right:15px;
+            top:50%;
+            width:15px;height:15px;line-height:15px;font-size:12px;
+            font-family:SimSun;
+            margin-top:-7px;
+            font-style:normal;
+        }
+        /*.arrow-up:before {
+            content:'▼'
+        }
+        .arrow-down:before {
+            content:'▲'
+        }*/
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="select" id="wrapper">
+            <div class="selected">
+                <i class="arrow">▼</i>
+                <input type="hidden" value="" />
+                <span class="select">请选择</span>
+            </div>
+            <div class="select-options" style="display:none;">
+                <ul>
+                    <li class="select-option" data-value="北京市">北京市</li>
+                    <li class="select-option" data-value="上海市">上海市</li>
+                    <li class="select-option" data-value="合肥市">合肥市</li>
+                </ul>
+            </div>
+        </div>
+
+                <div class="select" id="Div1">
+            <div class="selected">
+                <i class="arrow">▼</i>
+                <input type="hidden" value="" />
+                <span class="select">请选择</span>
+            </div>
+            <div class="select-options" style="display:none;">
+                <ul>
+                    <li class="select-option" data-value="北京市">北京市</li>
+                    <li class="select-option" data-value="上海市">上海市</li>
+                    <li class="select-option" data-value="合肥市">合肥市</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var dropMenu = new globelSelect("#wrapper");
+        var dropMenu1 = new globelSelect("#Div1");
+        dropMenu.on('select', function (d) {
+            console.log(d);
+        });
+    </script>
+</body>
+</html>
